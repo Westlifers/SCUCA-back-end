@@ -3,3 +3,6 @@
 
 ## 开发技术
 Django-rest-framework
+
+## 部署注意
+> 因为暂时基于SQLite数据库，需要修改py环境的sqlite.ddl文件才能适配JSONField字段
