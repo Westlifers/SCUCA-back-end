@@ -1,11 +1,24 @@
 from django.shortcuts import render
-from app.serializers import ClassmateSerializer
+from app.serializers import *
 from .models import *
 from rest_framework import viewsets, mixins
 
 # Create your views here.
 
-class ClassmateViews(viewsets.ModelViewSet):
-    serializer_class = ClassmateSerializer
+
+class CometitionViews(viewsets.ModelViewSet):
+    serializer_class = CompetitionSerializer
     def get_queryset(self):
-        return Classmate.objects.all()
+        return Competition.objects.all()
+
+
+class ResultViews(viewsets.ModelViewSet):
+    serializer_class = ResultSerializer
+    def get_queryset(self):
+        return Result.objects.all()
+
+
+class ScrambleViews(viewsets.ModelViewSet):
+    serializer_class = ScrambleSerializer
+    def get_queryset(self):
+        return Scramble.objects.all()

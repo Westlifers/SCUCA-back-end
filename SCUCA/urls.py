@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url, include
 from rest_framework import routers
+
 router = routers.DefaultRouter()
 from app.views import *
 
-router.register('classmates', ClassmateViews, basename='classmates')
+router.register('competitions', CometitionViews, basename='competitions')
+router.register('results', ResultViews, basename='results')
+router.register('scrambles', ScrambleViews, basename='scrambles')
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('', include(router.urls)),

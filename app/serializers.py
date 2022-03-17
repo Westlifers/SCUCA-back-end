@@ -1,7 +1,20 @@
 from rest_framework import serializers
 from .models import *
 
-class ClassmateSerializer(serializers.ModelSerializer):
+
+class CompetitionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Classmate
-        fields = ["name", "school", "major"]
+        model = Competition
+        fields = ['date']
+
+
+class ResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Result
+        fields = ['compttion', 'user']
+
+
+class ScrambleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Scramble
+        fields = ['item_333']
