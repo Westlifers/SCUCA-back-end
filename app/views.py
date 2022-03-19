@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from app.serializers import *
 from .models import *
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets
 
 # Create your views here.
 
@@ -17,8 +17,3 @@ class ResultViews(viewsets.ModelViewSet):
     def get_queryset(self):
         return Result.objects.all()
 
-
-class ScrambleViews(viewsets.ModelViewSet):
-    serializer_class = ScrambleSerializer
-    def get_queryset(self):
-        return Scramble.objects.all()

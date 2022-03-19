@@ -23,7 +23,6 @@ from app.views import *
 
 router.register('competitions', CometitionViews, basename='competitions')
 router.register('results', ResultViews, basename='results')
-router.register('scrambles', ScrambleViews, basename='scrambles')
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('', include(router.urls)),
