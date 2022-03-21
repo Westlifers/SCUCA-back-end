@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', #这个要尽量放在前面
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -138,3 +140,11 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#CORS解决跨域问题设置
+
+# 跨域问题
+CORS_ORIGIN_ALLOW_ALL = True
+# 允许携带cookie
+CORS_ALLOW_CREDENTIALS = True
