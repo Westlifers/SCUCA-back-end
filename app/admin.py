@@ -9,7 +9,7 @@ class CompetitionAdmin(admin.ModelAdmin):
 
 
 class ResultAdmin(admin.ModelAdmin):
-    list_display = ['user', 'competition', 'item', 'time1', 'time2', 'time3', 'time4', 'time5']
+    list_display = ['user', 'competition', 'item', 'time1', 'time2', 'time3', 'time4', 'time5', 'video']
 
 
 admin.site.register(Competition, CompetitionAdmin)

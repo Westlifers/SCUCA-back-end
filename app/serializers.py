@@ -11,4 +11,4 @@ class CompetitionSerializer(serializers.ModelSerializer):
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Result
-        fields = ['competition', 'user', 'item', 'time1', 'time2', 'time3', 'time4', 'time5']
+        fields = ['competition', 'user', 'item', 'time1', 'time2', 'time3', 'time4', 'time5', 'video']

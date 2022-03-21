@@ -1,4 +1,5 @@
 from email.policy import default
+from re import T
 from django.db.models.deletion import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
@@ -50,4 +51,5 @@ class Result(models.Model):
     time3 = models.FloatField('时间3', default=0.0)
     time4 = models.FloatField('时间4', default=0.0, blank=True, null=True)
     time5 = models.FloatField('时间5', default=0.0, blank=True, null=True)
+    video = models.CharField('视频BV号', default='', max_length=20, blank=True, null=True)
 
