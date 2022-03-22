@@ -1,3 +1,4 @@
+from numpy import source
 from rest_framework import serializers
 from .models import *
 
@@ -11,4 +12,8 @@ class CompetitionSerializer(serializers.ModelSerializer):
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Result
-        fields = ['competition', 'user', 'item', 'time1', 'time2', 'time3', 'time4', 'time5', 'video']
+        fields = ['competition', 'username', 'item', 'time1', 'time2', 'time3', 'time4', 'time5', 'video']
+    
+    username = serializers.CharField(source='user.username')
+    def get_username(self, obj):
+        return obj.user.username
